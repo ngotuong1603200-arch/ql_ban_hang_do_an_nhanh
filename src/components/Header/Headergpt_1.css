@@ -1,0 +1,440 @@
+/* =========================================================
+   FILE: Headergemini_1.css
+   GIAO DIỆN HIỆN ĐẠI DÀNH CHO CỬA HÀNG FASTFOOD
+========================================================= */
+
+/* --- TỔNG THỂ HEADER --- */
+.fastfood-header {
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bóng đổ mềm mại hơn */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Luôn nổi lên trên cùng */
+}
+
+/* --- TOP BAR --- */
+.header-top-bar {
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header-top-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* --- THÔNG TIN GIAO HÀNG --- */
+.header-delivery-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.delivery-text {
+    font-weight: 700;
+    color: #E53935; /* Đỏ rực rỡ phong cách đồ ăn nhanh */
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.delivery-icon {
+    color: #E53935;
+    font-size: 14px;
+    animation: ringPhone 2s infinite; /* Hiệu ứng rung điện thoại */
+}
+
+.delivery-phone {
+    font-weight: 800;
+    color: #E53935;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.header-delivery-info:hover .delivery-phone {
+    color: #D32F2F;
+}
+
+.delivery-scooter {
+    margin-left: 10px;
+    color: #43A047; /* Xanh lá tươi */
+    font-size: 22px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header-delivery-info:hover .delivery-scooter {
+    transform: translateX(10px) rotate(-5deg); /* Hiệu ứng xe chạy tới khi hover */
+}
+
+/* --- LOGO --- */
+.header-logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex: 0 0 auto;
+}
+
+.fastfood-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo-image {
+    height: 80px; /* Tăng nhẹ kích thước logo */
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); /* Thêm bóng đổ cho logo */
+}
+
+.header-logo-image:hover {
+    transform: scale(1.08) translateY(-2px);
+    filter: drop-shadow(0 8px 12px rgba(229, 57, 53, 0.15));
+}
+
+/* --- KHU VỰC USER TRÊN CÙNG PHẢI --- */
+.header-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+
+/* --- NÚT ĐĂNG NHẬP (Nâng cấp) --- */
+.login-link {
+    background-color: #f8f9fa;
+    color: #2D3436;
+    border: 1px solid #e0e0e0;
+    padding: 8px 18px;
+    border-radius: 20px; /* Bo tròn hoàn toàn dạng pill */
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.login-link i {
+    color: #E53935; /* Điểm nhấn đỏ */
+}
+
+.login-link:hover {
+    background-color: #E53935;
+    border-color: #E53935;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(229, 57, 53, 0.2);
+}
+
+.login-link:hover i {
+    color: #ffffff;
+}
+
+.login-link:active {
+    transform: translateY(1px);
+}
+
+.action-separator {
+    color: #e0e0e0;
+}
+
+/* --- CHỌN NGÔN NGỮ --- */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #636e72;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.lang-active {
+    font-weight: 700;
+    color: #E53935;
+}
+
+.lang-separator {
+    color: #e0e0e0;
+}
+
+.lang-option {
+    transition: color 0.2s;
+}
+
+.lang-option:hover {
+    color: #E53935;
+}
+
+/* --- NÚT GIỎ HÀNG (Hiệu ứng bắt mắt) --- */
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border: 2px solid #E53935;
+    border-radius: 25px; /* Dạng Pill */
+    background-color: #ffffff;
+    color: #E53935;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.cart-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #E53935;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: 0;
+}
+
+.cart-button:hover::before {
+    width: 200px;
+    height: 200px;
+}
+
+.cart-button span, .cart-button i {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.cart-button:hover span, .cart-button:hover i {
+    color: #ffffff;
+}
+
+.cart-button i {
+    font-size: 16px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 22px;
+    height: 22px;
+    background-color: #FFB300; /* Màu vàng cam nổi bật */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: 2px solid #fff;
+    z-index: 2;
+    animation: bounceBadge 2s infinite;
+}
+
+/* --- THANH ĐIỀU HƯỚNG BÊN DƯỚI (NAVIGATION) --- */
+.header-navigation {
+    background-color: #ffffff;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.nav-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Tăng khoảng cách giữa các menu */
+    padding: 0 20px;
+}
+
+.nav-link {
+    color: #2D3436;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 16px 5px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Hiệu ứng gạch dưới trượt từ trái sang phải */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #E53935;
+    transition: width 0.3s ease;
+    border-radius: 3px 3px 0 0;
+}
+
+.nav-link:hover {
+    color: #E53935;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #E53935;
+    background-color: transparent; /* Bỏ nền xanh lá cũ */
+}
+
+/* --- DROPDOWN MENU --- */
+.nav-item-with-dropdown {
+    position: relative;
+}
+
+/* Bỏ background của nav-link khi hover thẻ cha để nhìn sang hơn */
+.nav-item-with-dropdown:hover .nav-link {
+    background-color: transparent;
+    color: #E53935;
+    border-radius: 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ (Glassmorphism) */
+    min-width: 220px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+    z-index: 1000;
+    padding: 10px 0;
+    margin-top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-item-with-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Mũi tên nhỏ chĩa lên cho Dropdown */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-left: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 25px;
+    color: #2D3436;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.dropdown-item:hover {
+    background-color: #fff5f5;
+    color: #E53935;
+    padding-left: 30px; /* Hiệu ứng trượt chữ nhẹ sang phải */
+}
+
+/* --- KEYFRAMES ANIMATIONS --- */
+@keyframes ringPhone {
+    0%, 100% { transform: rotate(0); }
+    10%, 30%, 50% { transform: rotate(-15deg); }
+    20%, 40% { transform: rotate(15deg); }
+    60% { transform: rotate(0); }
+}
+
+@keyframes bounceBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* --- ĐÁP ỨNG THIẾT BỊ DI ĐỘNG (RESPONSIVE) --- */
+@media (max-width: 1024px) {
+    .header-delivery-info {
+        font-size: 12px;
+    }
+    .delivery-scooter {
+        font-size: 18px;
+    }
+    .nav-content {
+        gap: 15px;
+    }
+    .nav-link {
+        font-size: 13px;
+        padding: 12px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .header-logo-container {
+        position: relative;
+        left: auto;
+        transform: none;
+        order: -1; /* Đưa logo lên trên cùng trên điện thoại */
+    }
+    .header-logo-image {
+        height: 60px;
+    }
+    .header-user-actions {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .nav-content {
+        gap: 15px;
+        font-size: 11px;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    .dropdown-menu {
+        left: 0;
+        transform: none;
+        min-width: 100%;
+    }
+    .nav-item-with-dropdown:hover .dropdown-menu {
+        transform: translateY(5px);
+    }
+}

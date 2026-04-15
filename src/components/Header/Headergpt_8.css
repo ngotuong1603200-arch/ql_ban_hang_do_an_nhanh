@@ -1,0 +1,407 @@
+/* =========================================================
+   FILE: Headergemini_8.css
+   PHONG CÁCH: ECO-CRAFT & ORGANIC (MỘC MẠC, THỦ CÔNG, BÁNH NGỌT/HEALTHY)
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* --- TỔNG THỂ HEADER --- */
+.fastfood-header {
+    background-color: #F9F6F0; /* Màu giấy kraft sáng / kem sữa */
+    width: 100%;
+    /* Kết hợp font chữ có chân (Lora) cho sự cổ điển và không chân (Nunito) cho sự mềm mại */
+    font-family: 'Nunito', sans-serif;
+    box-shadow: 0 8px 20px rgba(139, 115, 85, 0.08); /* Bóng đổ màu nâu mờ ấm áp */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #EAE3D5; /* Viền mờ màu cát */
+}
+
+/* --- TOP BAR --- */
+.header-top-bar {
+    background-color: transparent;
+    padding: 16px 20px;
+    position: relative;
+}
+
+/* Thêm một dải họa tiết răng cưa hoặc gợn sóng mờ dưới top bar */
+.header-top-bar::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-image: radial-gradient(circle at 10px 0, transparent 12px, #F9F6F0 13px);
+    background-size: 20px 10px;
+    background-repeat: repeat-x;
+    z-index: 1;
+}
+
+.header-top-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- THÔNG TIN GIAO HÀNG --- */
+.header-delivery-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    padding: 8px 20px;
+    /* Góc bo không đều tạo hình chiếc lá / nét vẽ tay */
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    border: 2px solid #2C5E3B; /* Xanh rừng (Forest Green) */
+    transition: all 0.3s ease;
+    width: max-content;
+    flex: 0 1 auto;
+}
+
+.header-delivery-info:hover {
+    background-color: #2C5E3B;
+    transform: rotate(-1deg) translateY(-2px);
+    box-shadow: 4px 6px 0px rgba(44, 94, 59, 0.15);
+}
+
+.delivery-text {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: #2C5E3B;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.delivery-icon {
+    color: #D65A31; /* Cam đất / Đất nung (Terracotta) */
+    font-size: 14px;
+}
+
+.delivery-phone {
+    font-weight: 800;
+    color: #D65A31;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.header-delivery-info:hover .delivery-text,
+.header-delivery-info:hover .delivery-icon,
+.header-delivery-info:hover .delivery-phone {
+    color: #F9F6F0; /* Đổi màu chữ sang trắng kem khi hover */
+}
+
+.delivery-scooter {
+    color: #8B7355; /* Nâu gỗ */
+    font-size: 22px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.header-delivery-info:hover .delivery-scooter {
+    color: #F9F6F0;
+    transform: translateX(5px) rotate(-10deg);
+}
+
+/* --- LOGO --- */
+.header-logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex: 0 0 auto;
+}
+
+.header-logo-image {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Phủ một lớp màu sepia nhẹ để logo trông "vintage" hơn */
+    filter: drop-shadow(2px 4px 6px rgba(139, 115, 85, 0.2)) sepia(0.2);
+}
+
+.header-logo-image:hover {
+    transform: scale(1.05) rotate(2deg);
+    filter: drop-shadow(4px 8px 10px rgba(139, 115, 85, 0.3)) sepia(0);
+}
+
+/* --- KHU VỰC USER TRÊN CÙNG PHẢI --- */
+.header-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* --- NÚT ĐĂNG NHẬP --- */
+.login-link {
+    background-color: transparent;
+    color: #4A4036; /* Nâu xám đậm */
+    border: 2px dashed #B8A99A; /* Viền đứt nét kiểu thẻ tag handmade */
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.login-link i {
+    color: #2C5E3B;
+}
+
+.login-link:hover {
+    border-color: #2C5E3B;
+    background-color: #E8F0E9; /* Xanh lá siêu nhạt */
+    color: #2C5E3B;
+}
+
+.action-separator {
+    display: none;
+}
+
+/* --- CHỌN NGÔN NGỮ --- */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #8B7355;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.lang-active {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: #F9F6F0;
+    background-color: #D65A31; /* Nhấn màu cam đất */
+    padding: 2px 8px;
+    border-radius: 12px 4px 12px 4px; /* Hình dáng mộc mạc */
+}
+
+.lang-separator {
+    display: none;
+}
+
+.lang-option:hover {
+    color: #D65A31;
+    text-decoration: underline;
+    text-decoration-style: wavy; /* Gạch chân gợn sóng */
+}
+
+/* --- NÚT GIỎ HÀNG --- */
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border: none;
+    background-color: #D65A31; /* Cam đất */
+    color: #FFFFFF;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    /* Bo góc hình chiếc lá */
+    border-radius: 20px 4px 20px 4px;
+    box-shadow: 3px 4px 0px #8B3D1F; /* Bóng đổ cứng màu đậm hơn */
+    transition: all 0.2s ease;
+}
+
+.cart-button:hover {
+    background-color: #E86A41;
+    transform: translateY(-2px);
+    box-shadow: 4px 6px 0px #8B3D1F;
+}
+
+.cart-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px #8B3D1F;
+}
+
+.cart-button i {
+    font-size: 16px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    width: 24px;
+    height: 24px;
+    background-color: #2C5E3B; /* Xanh lá rêu */
+    color: #F9F6F0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    border: 2px solid #F9F6F0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    /* Hiệu ứng rung nhẹ như chuông gió */
+    animation: swing 3s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+/* --- THANH ĐIỀU HƯỚNG BÊN DƯỚI (NAVIGATION) --- */
+.header-navigation {
+    background-color: transparent;
+    padding: 0 0 10px 0;
+}
+
+.nav-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-link {
+    font-family: 'Lora', serif;
+    color: #4A4036;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: capitalize; /* Viết hoa chữ cái đầu cho mềm mại hơn UPPERCASE */
+    padding: 8px 15px;
+    position: relative;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+/* Hiệu ứng highlight màu nước (Vết quẹt chổi sơn) sau chữ */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 5px;
+    right: 5px;
+    height: 10px;
+    background-color: #F0D98F; /* Vàng lúa mì */
+    z-index: -1;
+    opacity: 0;
+    transform: rotate(-2deg);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #2C5E3B;
+}
+
+.nav-link:hover::before, .nav-link.active::before {
+    opacity: 1;
+    bottom: 4px;
+}
+
+/* --- DROPDOWN MENU --- */
+.nav-item-with-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #FFFFFF;
+    min-width: 250px;
+    /* Góc bo không đều thủ công */
+    border-radius: 8px 25px 8px 25px;
+    border: 2px solid #EAE3D5;
+    box-shadow: 0 10px 25px rgba(139, 115, 85, 0.15);
+    z-index: 1000;
+    padding: 15px 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Biểu tượng chiếc lá nhỏ xinh chỉ lên dropdown */
+.dropdown-menu::after {
+    content: '✿';
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #2C5E3B;
+    font-size: 18px;
+}
+
+.nav-item-with-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    color: #4A4036;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Chấm bi nhỏ mộc mạc cạnh menu item */
+.dropdown-item::before {
+    content: '•';
+    position: absolute;
+    left: 10px;
+    color: #D65A31;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #F9F6F0;
+    color: #D65A31;
+    padding-left: 25px;
+}
+
+.dropdown-item:hover::before {
+    opacity: 1;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .nav-content { gap: 15px; }
+    .nav-link { font-size: 14px; padding: 8px 5px; }
+}
+
+@media (max-width: 768px) {
+    .header-top-content { flex-direction: column; gap: 15px; }
+    .header-logo-container { position: relative; left: auto; transform: none; order: -1; }
+    .header-delivery-info { width: auto; flex: none; }
+    .header-user-actions { justify-content: center; flex-wrap: wrap; width: 100%; }
+    .nav-content { flex-wrap: wrap; gap: 10px; padding: 5px 15px; }
+    .dropdown-menu { left: 50%; transform: translateX(-50%) translateY(10px); min-width: 90vw; }
+}

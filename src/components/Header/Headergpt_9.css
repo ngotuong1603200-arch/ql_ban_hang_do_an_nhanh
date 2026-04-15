@@ -1,0 +1,396 @@
+/* =========================================================
+   FILE: Headergemini_9.css
+   PHONG CÁCH: DARK FANTASY & GACHA GAME HUD (GAME GIAO DIỆN HẮC ÁM)
+========================================================= */
+
+/* Import font: Cinzel (Sang trọng, sử thi) và Rajdhani (Góc cạnh, đậm chất UI Game) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* --- TỔNG THỂ HEADER --- */
+.fastfood-header {
+    background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
+    width: 100%;
+    font-family: 'Rajdhani', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #8b0000; /* Đỏ rực hắc ám */
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+    color: #e0d5c1; /* Màu giấy da / Parchment */
+}
+
+/* Thêm hiệu ứng sọc ngang (Scanlines) mờ ảo cho nền */
+.fastfood-header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- TOP BAR --- */
+.header-top-bar {
+    background-color: transparent;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Vàng kim loại mờ */
+    position: relative;
+    z-index: 1;
+}
+
+.header-top-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- THÔNG TIN GIAO HÀNG (Giống thanh Máu/Thể lực - Stamina Bar) --- */
+.header-delivery-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(139, 0, 0, 0.2), transparent);
+    padding: 8px 20px;
+    border-left: 3px solid #d4af37; /* Vàng kim loại (Gold) */
+    /* Góc vát chéo đặc trưng của game UI */
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: all 0.3s ease;
+    width: max-content;
+    flex: 0 1 auto;
+}
+
+.header-delivery-info:hover {
+    background: linear-gradient(90deg, rgba(139, 0, 0, 0.6), rgba(212, 175, 55, 0.1));
+    border-left: 3px solid #ff0000;
+}
+
+.delivery-text {
+    font-weight: 700;
+    color: #d4af37; /* Gold */
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.delivery-icon {
+    color: #ff3333;
+    font-size: 16px;
+}
+
+.delivery-phone {
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 18px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.delivery-scooter {
+    color: #d4af37;
+    font-size: 20px;
+    transition: transform 0.3s steps(3); /* Giật theo frame */
+}
+
+.header-delivery-info:hover .delivery-scooter {
+    transform: translateX(10px) skewX(-15deg);
+    color: #ff3333;
+}
+
+/* --- LOGO --- */
+.header-logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex: 0 0 auto;
+}
+
+.header-logo-image {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    /* Ánh sáng đỏ rực hắt từ dưới lên */
+    filter: drop-shadow(0 5px 10px rgba(139, 0, 0, 0.8)) contrast(1.2);
+}
+
+.header-logo-image:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)) contrast(1.3);
+}
+
+/* --- KHU VỰC USER TRÊN CÙNG PHẢI --- */
+.header-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* --- NÚT ĐĂNG NHẬP --- */
+.login-link {
+    background-color: transparent;
+    color: #a9a9a9;
+    border: 1px solid #333;
+    padding: 6px 16px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Góc vát */
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-link:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.action-separator { display: none; }
+
+/* --- CHỌN NGÔN NGỮ --- */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    cursor: pointer;
+}
+
+.lang-active {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: 2px solid #8b0000;
+    padding-bottom: 2px;
+}
+
+.lang-separator { color: #444; }
+
+.lang-option:hover {
+    color: #d4af37;
+}
+
+/* --- NÚT GIỎ HÀNG (Giống Nút Roll / Summon Tướng) --- */
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #4a0000 0%, #8b0000 50%, #b22222 100%);
+    border: 1px solid #d4af37;
+    color: #ffffff;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    /* Góc vát nhọn mạnh */
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Vệt sáng lướt qua nút như lưỡi kiếm */
+.cart-button::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -150%;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.6), transparent);
+    transform: skewX(-25deg);
+    transition: all 0.5s ease;
+}
+
+.cart-button:hover {
+    background: linear-gradient(135deg, #8b0000 0%, #dc143c 50%, #ff0000 100%);
+    box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+    color: #ffd700;
+}
+
+.cart-button:hover::before {
+    left: 200%;
+}
+
+.cart-button i {
+    font-size: 16px;
+    color: #d4af37;
+}
+
+.cart-button:hover i {
+    color: #ffffff;
+}
+
+/* Badge số lượng (Viên ngọc năng lượng) */
+.cart-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle, #ff4500 0%, #8b0000 100%);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 0 10px #ff4500;
+    border: 1px solid #ffd700;
+}
+
+/* --- THANH ĐIỀU HƯỚNG BÊN DƯỚI (NAVIGATION) --- */
+.header-navigation {
+    background-color: transparent;
+    padding: 5px 0 10px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-link {
+    font-family: 'Cinzel', serif;
+    color: #a9a9a9;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 10px 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Hình thoi (Diamond) phát sáng dưới chân menu */
+.nav-link::after {
+    content: '♦';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    color: #d4af37;
+    font-size: 12px;
+    text-shadow: 0 0 10px #d4af37;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    transform: translateX(-50%) scale(1);
+}
+
+/* --- DROPDOWN MENU (Khung Inventory) --- */
+.nav-item-with-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(5px);
+    min-width: 260px;
+    border: 1px solid #333;
+    border-top: 3px solid #8b0000;
+    border-bottom: 3px solid #d4af37;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+}
+
+.nav-item-with-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 25px;
+    color: #a9a9a9;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    border-left: 2px solid transparent;
+}
+
+/* Mũi tên trỏ ngang kiểu UI game */
+.dropdown-item::before {
+    content: '»';
+    position: absolute;
+    left: 10px;
+    color: #d4af37;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(90deg, rgba(139, 0, 0, 0.3), transparent);
+    color: #ffffff;
+    border-left: 2px solid #d4af37;
+    padding-left: 30px;
+}
+
+.dropdown-item:hover::before {
+    opacity: 1;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .nav-content { gap: 15px; }
+    .nav-link { font-size: 13px; padding: 10px 5px; }
+}
+
+@media (max-width: 768px) {
+    .header-top-content { flex-direction: column; gap: 20px; }
+    .header-logo-container { position: relative; left: auto; transform: none; order: -1; }
+    .header-delivery-info { width: 100%; justify-content: center; clip-path: none; border-left: none; border-bottom: 2px solid #d4af37; }
+    .header-user-actions { justify-content: center; flex-wrap: wrap; width: 100%; }
+    .nav-content { flex-wrap: wrap; padding: 10px; gap: 15px; }
+    .dropdown-menu { left: 50%; transform: translateX(-50%) translateY(10px); min-width: 90vw; }
+}

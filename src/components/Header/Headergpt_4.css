@@ -1,0 +1,391 @@
+/* =========================================================
+   FILE: Headergemini_4.css
+   PHONG CÁCH: MIDNIGHT NEON (DARK MODE & CYBERPUNK)
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+/* --- TỔNG THỂ HEADER --- */
+.fastfood-header {
+    background-color: #0a0a0c; /* Đen sâu thẳm */
+    width: 100%;
+    font-family: 'Outfit', sans-serif; /* Font chữ hiện đại, đậm chất tech */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: #ffffff; /* Chữ mặc định màu trắng */
+}
+
+/* --- TOP BAR --- */
+.header-top-bar {
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(15px); /* Hiệu ứng kính mờ cho Dark Mode */
+    -webkit-backdrop-filter: blur(15px);
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-top-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* --- THÔNG TIN GIAO HÀNG --- */
+.header-delivery-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.delivery-text {
+    font-weight: 600;
+    color: #00ffcc; /* Cyan Neon */
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.4); /* Phát sáng mờ */
+}
+
+.delivery-icon {
+    color: #ff0055; /* Hồng Neon */
+    font-size: 15px;
+    animation: pulseNeon 2s infinite;
+}
+
+.delivery-phone {
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.header-delivery-info:hover .delivery-phone {
+    color: #ff0055;
+    text-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+}
+
+.delivery-scooter {
+    margin-left: 5px;
+    color: #00ffcc;
+    font-size: 20px;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 204, 0.5));
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header-delivery-info:hover .delivery-scooter {
+    transform: translateX(10px) skewX(-10deg); /* Hiệu ứng lao đi trong đêm */
+}
+
+/* --- LOGO --- */
+.header-logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex: 0 0 auto;
+}
+
+.header-logo-image {
+    height: 75px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+}
+
+.header-logo-image:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(255, 0, 85, 0.5)); /* Logo bừng sáng khi hover */
+}
+
+/* --- KHU VỰC USER TRÊN CÙNG PHẢI --- */
+.header-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+
+/* --- NÚT ĐĂNG NHẬP --- */
+.login-link {
+    background-color: transparent;
+    color: #a0a0a0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.login-link:hover {
+    color: #ffffff;
+    border-color: #00ffcc;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3), inset 0 0 10px rgba(0, 255, 204, 0.1);
+}
+
+.action-separator {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- CHỌN NGÔN NGỮ --- */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #666;
+    cursor: pointer;
+}
+
+.lang-active {
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.lang-separator {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.lang-option:hover {
+    color: #00ffcc;
+}
+
+/* --- NÚT GIỎ HÀNG --- */
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    border: 1px solid #ff0055;
+    border-radius: 8px;
+    background: rgba(255, 0, 85, 0.1); /* Nền đỏ trong suốt */
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.cart-button:hover {
+    background: #ff0055;
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.6);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.cart-button i {
+    font-size: 16px;
+    color: #ff0055;
+    transition: color 0.3s;
+}
+
+.cart-button:hover i {
+    color: #ffffff;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 22px;
+    height: 22px;
+    background-color: #00ffcc; /* Cyan Neon */
+    color: #0a0a0c; /* Chữ màu đen */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+}
+
+/* --- THANH ĐIỀU HƯỚNG BÊN DƯỚI (NAVIGATION) --- */
+.header-navigation {
+    background-color: #121215; /* Sáng hơn viền đen trên cùng một chút */
+    border-bottom: 1px solid rgba(255, 0, 85, 0.2); /* Viền mỏng màu đỏ Neon */
+}
+
+.nav-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.nav-link {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 10px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng tia sáng chạy dưới viền (Neon Line) */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffcc, transparent);
+    opacity: 0;
+    transform: translateY(2px);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-link.active {
+    background: none;
+}
+
+/* --- DROPDOWN MENU --- */
+.nav-item-with-dropdown {
+    position: relative;
+}
+
+.nav-item-with-dropdown:hover .nav-link {
+    background: none;
+    color: #ffffff;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px) scale(0.95);
+    background-color: rgba(18, 18, 21, 0.95); /* Kính mờ đen */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    min-width: 250px;
+    border: 1px solid rgba(0, 255, 204, 0.2); /* Viền Cyan mờ */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 204, 0.1);
+    border-radius: 12px;
+    z-index: 1000;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-item-with-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    color: #c0c0c0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Hiệu ứng quét màu neon khi hover item */
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 85, 0.2), transparent);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.dropdown-item:hover {
+    color: #ffffff;
+    padding-left: 25px;
+    text-shadow: 0 0 5px rgba(255, 0, 85, 0.5);
+}
+
+.dropdown-item:hover::before {
+    left: 100%;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes pulseNeon {
+    0%, 100% { text-shadow: 0 0 5px rgba(255, 0, 85, 0.5); transform: scale(1); }
+    50% { text-shadow: 0 0 15px rgba(255, 0, 85, 0.8), 0 0 25px rgba(255, 0, 85, 0.5); transform: scale(1.1); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .nav-content { gap: 15px; }
+    .nav-link { font-size: 12px; padding: 12px 5px; }
+}
+
+@media (max-width: 768px) {
+    .header-top-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .header-logo-container {
+        position: relative;
+        left: auto;
+        transform: none;
+        order: -1;
+    }
+    .header-logo-image { height: 60px; }
+    .header-user-actions {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .nav-content {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+    .dropdown-menu {
+        left: 0;
+        transform: none;
+        min-width: 100%;
+    }
+    .nav-item-with-dropdown:hover .dropdown-menu {
+        transform: translateY(5px);
+    }
+}

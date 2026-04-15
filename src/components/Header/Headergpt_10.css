@@ -1,0 +1,399 @@
+/* =========================================================
+   FILE: Headergemini_10.css
+   PHONG CÁCH: SWEET KAWAII & DESSERT CAFE (KẸO NGỌT DỄ THƯƠNG)
+========================================================= */
+
+/* Import font: Fredoka (Tròn trịa, mũm mĩm siêu đáng yêu) */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+
+/* --- TỔNG THỂ HEADER --- */
+.fastfood-header {
+    background-color: #FFF5F7; /* Hồng nhạt kẹo dẻo (Marshmallow Pink) */
+    width: 100%;
+    font-family: 'Fredoka', sans-serif; /* Font mũm mĩm */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px dotted #FFB6C1; /* Viền chấm bi hồng phấn */
+    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.15); /* Bóng đổ hồng mờ */
+    color: #5D4037; /* Chữ màu Nâu Chocolate cho sự mềm mại */
+}
+
+/* --- TOP BAR --- */
+.header-top-bar {
+    background-color: transparent;
+    padding: 12px 20px;
+    border-bottom: 2px dashed #FFD1DC; /* Viền đứt nét bên dưới top bar */
+}
+
+.header-top-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* --- THÔNG TIN GIAO HÀNG (Dạng viên kẹo) --- */
+.header-delivery-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    padding: 8px 18px;
+    border-radius: 30px; /* Bo tròn hoàn toàn */
+    border: 2px solid #FFB6C1; /* Viền hồng */
+    box-shadow: 0 4px 0px #FFD1DC; /* Bóng nổi 3D kẹo ngọt */
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hiệu ứng nảy jelly */
+    width: max-content;
+    flex: 0 1 auto;
+}
+
+.header-delivery-info:hover {
+    transform: translateY(-3px) rotate(-1deg);
+    background-color: #FFE4E1; /* Hồng Misty */
+    box-shadow: 0 6px 0px #FFB6C1;
+}
+
+.header-delivery-info:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 0px #FFD1DC; /* Bấm xẹp xuống */
+}
+
+.delivery-text {
+    font-weight: 600;
+    color: #FF87A0; /* Hồng dâu tây */
+    font-size: 14px;
+}
+
+.delivery-icon {
+    color: #4CB8C4; /* Xanh kẹo bông (Cotton candy blue) */
+    font-size: 16px;
+    animation: wiggle 2s infinite; /* Icon điện thoại lắc lư */
+}
+
+.delivery-phone {
+    font-weight: 700;
+    color: #5D4037;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.delivery-scooter {
+    color: #FFC0CB;
+    font-size: 24px;
+    margin-left: 5px;
+    transition: transform 0.4s ease;
+}
+
+.header-delivery-info:hover .delivery-scooter {
+    transform: translateX(5px) scale(1.1);
+    color: #FF87A0;
+}
+
+/* --- LOGO --- */
+.header-logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex: 0 0 auto;
+}
+
+.header-logo-image {
+    height: 85px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    /* Hiệu ứng trôi bồng bềnh như đám mây */
+    animation: floatLogo 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 6px rgba(255, 182, 193, 0.4));
+}
+
+.header-logo-image:hover {
+    animation-play-state: paused;
+    transform: scale(1.1) rotate(3deg); /* Nghiêng đầu dễ thương khi hover */
+}
+
+/* --- KHU VỰC USER TRÊN CÙNG PHẢI --- */
+.header-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+/* --- NÚT ĐĂNG NHẬP --- */
+.login-link {
+    background-color: #FFFFFF;
+    color: #5D4037;
+    border: 2px dashed #AEC6CF; /* Viền xanh baby */
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.login-link i {
+    color: #AEC6CF;
+    font-size: 16px;
+}
+
+.login-link:hover {
+    background-color: #AEC6CF;
+    color: #FFFFFF;
+    border-style: solid;
+    transform: scale(1.05) rotate(2deg);
+}
+
+.login-link:hover i {
+    color: #FFFFFF;
+}
+
+.action-separator { display: none; }
+
+/* --- CHỌN NGÔN NGỮ --- */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #A9A9A9;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.lang-active {
+    font-weight: 700;
+    color: #FFFFFF;
+    background-color: #FFB7C5; /* Hoa anh đào */
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.lang-separator { display: none; }
+
+.lang-option:hover {
+    color: #FF87A0;
+}
+
+/* --- NÚT GIỎ HÀNG (Giống một chiếc bánh Macaron) --- */
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background-color: #FF87A0; /* Hồng dâu */
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    font-size: 15px;
+    box-shadow: 0 5px 0px #E0607E; /* Nổi khối 3D cứng */
+    transition: all 0.2s;
+}
+
+.cart-button:hover {
+    background-color: #FF6B8B;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0px #E0607E;
+}
+
+.cart-button:active {
+    transform: translateY(5px);
+    box-shadow: 0 0px 0px #E0607E; /* Xẹp nút bấm */
+}
+
+.cart-button i {
+    font-size: 16px;
+}
+
+/* Badge số lượng (Hình tròn vàng rực) */
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    background-color: #FFD166; /* Vàng chuối (Banana yellow) */
+    color: #5D4037;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: heartbeat 1.5s infinite; /* Đập thình thịch dễ thương */
+}
+
+/* --- THANH ĐIỀU HƯỚNG BÊN DƯỚI (NAVIGATION) --- */
+.header-navigation {
+    background-color: transparent;
+    padding: 10px 0 15px 0;
+}
+
+.nav-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-link {
+    color: #5D4037;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: capitalize; /* Viết hoa chữ đầu mềm mại */
+    padding: 8px 18px;
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #FF87A0;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    transform: translateY(-3px) scale(1.05); /* Bay nhẹ lên */
+}
+
+/* --- DROPDOWN MENU (Hộp thoại bong bóng thoại) --- */
+.nav-item-with-dropdown {
+    position: relative;
+}
+
+.nav-item-with-dropdown:hover .nav-link {
+    background-color: #FFFFFF;
+    color: #FF87A0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px) scale(0.9);
+    background-color: #FFFFFF;
+    min-width: 220px;
+    border-radius: 20px;
+    border: 3px solid #FFD1DC;
+    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.3);
+    z-index: 1000;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top center;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hiệu ứng phình to mượt mà */
+}
+
+/* Tạo đuôi bong bóng thoại (Speech Bubble) chỉ lên trên */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #FFD1DC transparent;
+}
+
+.dropdown-menu::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent #FFFFFF transparent;
+}
+
+.nav-item-with-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 15px;
+    color: #5D4037;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    margin-bottom: 5px;
+    text-align: center; /* Canh giữa cho dễ thương */
+}
+
+.dropdown-item:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-item:hover {
+    background-color: #FFF0F5; /* Lavender Blush */
+    color: #FF87A0;
+    transform: scale(1.03);
+}
+
+/* Điểm xuyết các ngôi sao lấp lánh (Sparkles) bằng emoji khi hover dropdown item */
+.dropdown-item:hover::before {
+    content: '✨ ';
+}
+.dropdown-item:hover::after {
+    content: ' ✨';
+}
+
+/* --- KEYFRAMES ANIMATIONS --- */
+@keyframes floatLogo {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-6px); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-5deg); }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+    60% { transform: scale(1); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .nav-content { gap: 10px; }
+    .nav-link { font-size: 14px; padding: 6px 12px; }
+}
+
+@media (max-width: 768px) {
+    .header-top-content { flex-direction: column; gap: 15px; }
+    .header-logo-container { position: relative; left: auto; transform: none; order: -1; animation: none; }
+    .header-logo-image:hover { transform: none; }
+    .header-delivery-info { width: auto; flex: none; }
+    .header-user-actions { justify-content: center; flex-wrap: wrap; width: 100%; }
+    .nav-content { flex-wrap: wrap; gap: 8px; padding: 5px; }
+    .dropdown-menu { left: 50%; transform: translateX(-50%) translateY(10px) scale(0.9); min-width: 90vw; }
+    .nav-item-with-dropdown:hover .dropdown-menu { transform: translateX(-50%) translateY(0) scale(1); }
+}
